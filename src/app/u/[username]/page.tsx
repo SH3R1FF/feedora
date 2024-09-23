@@ -83,19 +83,19 @@ const Message = () => {
     <div className="bg-transparent min-h-screen text-gray-100 mx-auto px-6">
 
       <div className=" text-center py-12">
-        <h1 className="text-5xl font-extrabold mb-10 bg-clip-text text-transparent bg-[radial-gradient(100%_100%_at_top_left,white,white,#4ca1af)] uppercase">
+        <h1 className="lg:text-5xl text-4xl  font-extrabold mb-10 bg-clip-text text-transparent bg-[radial-gradient(100%_100%_at_top_left,white,white,#4ca1af)] uppercase">
           Send Private Message to{" "} 
           
           {/* bg-clip-text text-transparent bg-[radial-gradient(100%_100%_at_top_left,white,white,#4ca1af)] */}
           <strong className="">{username}</strong>
         </h1>
-        <p className="text-lg text-gray-400 text-pretty">
+        <p className="lg:text-lg text-sm text-gray-400 text-center">
           Send a private message to the user. This message will only be visible
           to the recipient. <br /> Make sure to include your username when sending the
           message.
         </p>
       </div>
-      <div className="max-w-2xl mx-auto my-2 px-4">
+      <div className="max-w-2xl mx-auto lg:mb-0 mb-6 px-4">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(handleSendMessage)}
