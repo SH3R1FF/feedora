@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-export async function GET(req: Request) {
+export async function GET() {
   try {
     const messages = [
       { id: 1, message: "What's a hobby you've recently started?" },
