@@ -43,7 +43,7 @@ export async function DELETE(request: Request, {params}: {params: {messageid: st
                 success: true,
                 message: "Message Deleted" 
             },
-            { status: 401 }
+            { status: 200 }
         )
 
     } catch (error) {

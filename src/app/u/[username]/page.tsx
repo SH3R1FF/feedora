@@ -1,4 +1,6 @@
 "use client";
+
+import { Footer } from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import {
@@ -15,7 +17,7 @@ import { messageSchema } from "@/schemas/messageSchema";
 import { ApiResponse } from "@/types/ApiResponse";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios, { AxiosError } from "axios";
-import { Loader2, Stars } from "lucide-react";
+import { Loader2, MessageSquareMore, SendHorizontal, Stars } from "lucide-react";
 import { useParams } from "next/navigation";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -74,16 +76,22 @@ const Message = () => {
     }
   };
   return (
-    <div className="bg-gray-900 min-h-screen text-gray-100">
-      <Navbar />
-      <div className="text-center py-8">
-        <h1 className="text-3xl font-extrabold mb-4">
-          Send Private Message to{" "}
-          <strong className="underline">{username}</strong>
+
+    <>
+
+        <Navbar />
+    <div className="bg-transparent min-h-screen text-gray-100 mx-auto px-6">
+
+      <div className=" text-center py-12">
+        <h1 className="text-5xl font-extrabold mb-10 bg-clip-text text-transparent bg-[radial-gradient(100%_100%_at_top_left,white,white,#4ca1af)] uppercase">
+          Send Private Message to{" "} 
+          
+          {/* bg-clip-text text-transparent bg-[radial-gradient(100%_100%_at_top_left,white,white,#4ca1af)] */}
+          <strong className="">{username}</strong>
         </h1>
-        <p className="text-lg text-gray-400">
+        <p className="text-lg text-gray-400 text-pretty">
           Send a private message to the user. This message will only be visible
-          to the recipient. Make sure to include your username when sending the
+          to the recipient. <br /> Make sure to include your username when sending the
           message.
         </p>
       </div>
@@ -91,7 +99,7 @@ const Message = () => {
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(handleSendMessage)}
-            className="bg-gray-800 p-6 rounded-lg shadow-lg space-y-6"
+            className="bg-transparent border border-white/15 bg-zinc-950 text-white px-6 py-2 rounded-lg shadow-lg "
           >
             <FormField
               name="username"
@@ -102,33 +110,36 @@ const Message = () => {
                   <FormMessage />
                 </FormItem>
               )}
-            />
+              />
 
             <FormField
               name="content"
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <div className="flex justify-between items-center">
-                    <FormLabel className="text-gray-300">
-                      Send a Message
+                  <div className="flex-row md:flex justify-between items-center text-center py-2 space-y-3 ">
+                    <FormLabel className="text-gray-300 text-xl flex justify-center items-center gap-x-2 ">
+                      <div>
+                        <MessageSquareMore className="text-white" />
+                      </div>
+                      SEND A MESSAGE
                     </FormLabel>
 
                     <Button
                       type="button"
-                      variant={"outline"}
+                      // variant={"outline"}
                       onClick={handleGenratedMessage}
-                      className="mx-4 mb-2"
+                      className="mx-4 mb-2 bg-tranparent border border-white/15 hover:bg-zinc-900 "
                       size={"sm"}
                     >
                       {messageLoading ? (
                         <>
-                          <span className="text-gray-800"> Loading...</span>
+                          <span className="text-white"> Loading...</span>
                           <Loader2 className="h-4 w-4 mx-2 animate-spin text-gray-800" />
                         </>
                       ) : (
                         <>
-                          <span className="text-gray-800">
+                          <span className="text-gray-300">
                             {" "}
                             Generate Message{" "}
                           </span>
@@ -140,17 +151,19 @@ const Message = () => {
                   <Textarea
                     {...field}
                     placeholder="Type your message here..."
-                    className="bg-gray-700 border-gray-600 text-gray-100 placeholder-gray-400"
+                    className="bg-transparent border border-white/15 bg-zinc-900 text-zinc-300 placeholder-gray-400 h-32"
+                    
                   />
                   <FormMessage />
                 </FormItem>
               )}
             />
 
-            <Button
+            <Button 
               type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white"
               disabled={isLoading}
+              variant={"secondary"}
+              className="my-4"
             >
               {isLoading ? (
                 <>
@@ -158,13 +171,25 @@ const Message = () => {
                   Please wait
                 </>
               ) : (
-                "Send Message"
-              )}
+                <div className="flex justify-center items-center">
+                  <span>  
+                    Send Message 
+                  </span>
+                  <SendHorizontal className="h-4 w-4 ml-2 text-zinc-500 "/>
+                </div> 
+
+              )
+
+              }
             </Button>
+
           </form>
         </Form>
       </div>
     </div>
+          
+    <Footer/>
+  </>
   );
 };
 

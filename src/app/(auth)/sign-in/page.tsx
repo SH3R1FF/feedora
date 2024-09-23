@@ -6,7 +6,7 @@ import { useToast } from '@/hooks/use-toast'
 import { signInSchema } from '@/schemas/signInSchema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Button } from '@/components/ui/button'
-import { Loader2 } from "lucide-react"
+import { Loader2, MessageSquareCode } from "lucide-react"
 import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import * as z from 'zod'
@@ -57,13 +57,18 @@ const SignInForm = () => {
   
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-zinc-900">
-      <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-lg space-y-8">
+    <div className="flex justify-center items-center min-h-screen container px-1">
+      <div className="w-full max-w-md p-5 md:p-8 rounded-lg shadow-lg space-y-2 md:space-y-8 border border-white/15 bg-zinc-950">
         <div className="text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6">
-            Join Feedora
+          <div className='flex justify-center items-center'>
+            <MessageSquareCode className='w-10 h-10'/>
+          </div>
+          <h1 className="text-4xl pt-0 lg:pt-4 font-extrabold tracking-tight lg:text-5xl mb-6 bg-clip-text text-transparent bg-[radial-gradient(100%_100%_at_top_left,white,white,#4ca1af)]">
+            {/* Login to Feedora */}
+              {/* LOGIN TO FEEDORA */}
+              LOGIN
           </h1>
-          <p className="text-gray-600">
+          <p className="text-white/50">
             Sign in to start your anonymous adventure.
           </p>
         </div>
@@ -75,13 +80,14 @@ const SignInForm = () => {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="">
+                  <FormLabel className="text-white/80">
                     Email or Username
                   </FormLabel>
                   <FormControl> 
                     <Input
                       {...field}
                       placeholder="Enter your email or username"
+                      className='border border-white/15 bg-zinc-900 text-zinc-300'
                     />
                   </FormControl>
                   <FormMessage className="text-red-500 text-sm" />
@@ -94,16 +100,17 @@ const SignInForm = () => {
               control={form.control}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>
+                  <FormLabel className="text-white/80">
                     Password
                   </FormLabel>
-                  <FormControl>
+                  <FormControl >
                     <Input
                       {...field}
                       type="password"
                       placeholder="Enter your password"
-                    
-                    />
+                      className='border border-white/15 bg-zinc-900 text-zinc-300'
+                      
+                      />
                   </FormControl>
                   <FormMessage className="text-red-500 text-sm" />
                 </FormItem>
@@ -112,7 +119,8 @@ const SignInForm = () => {
 
             <Button
               type="submit"
-              className="w-full transition duration-300"
+              className="w-full transition duration-300 mt-4"
+              variant={'secondary'}
               disabled={isSubmitting}
             >
               {isSubmitting ? (
@@ -127,11 +135,11 @@ const SignInForm = () => {
           </form>
         </Form>
 
-        <div className="text-center mt-4">
-          <p className="text-gray-600">
+        <div className="text-center pt-6 md:pt-2">
+          <p className="text-white/50">
             Don&apos;t have an account yet?{" "}
-            <Link href="/sign-up" className="text-blue-600 hover:text-blue-800">
-              Sign Up
+            <Link href="/sign-up" className="hover:text-teal-300 text-teal-200">
+              Sign up
             </Link>
           </p>
         </div>

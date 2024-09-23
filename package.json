@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@dotlottie/react-player": "^1.6.19",
     "@hookform/resolvers": "^3.9.0",
+    "@lottiefiles/lottie-player": "^2.0.4",
     "@radix-ui/react-alert-dialog": "^1.1.1",
     "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-separator": "^1.1.0",
@@ -22,6 +24,9 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.13",
+    "embla-carousel-autoplay": "^8.3.0",
+    "embla-carousel-react": "^8.3.0",
+    "lottie-react": "^2.4.0",
     "lucide-react": "^0.439.0",
     "mongoose": "^8.6.1",
     "next": "14.2.8",
@@ -31,6 +36,7 @@
     "react-dom": "^18",
     "react-email": "^3.0.1",
     "react-hook-form": "^7.53.0",
+    "react-lottie-player": "^2.1.0",
     "resend": "^4.0.0",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
