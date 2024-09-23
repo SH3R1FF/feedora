@@ -143,7 +143,7 @@ const Dashboard = () => {
     <>
     {/* <div className="my-8 mx-4 md:mx-8 lg:mx-auto p-6 rounded w-full min-h-screen"> */}
     <div className="my-14 rounded w-full min-h-screen container">
-      <h1 className="text-5xl font-bold mb-10 bg-clip-text text-transparent bg-[radial-gradient(100%_100%_at_top_left,white,white,#4ca1af)]">USER DASHBOARD </h1>
+      <h1 className="lg:text-5xl text-4xl font-bold mb-10 bg-clip-text text-transparent bg-[radial-gradient(100%_100%_at_top_left,white,white,#4ca1af)]">USER DASHBOARD </h1>
 
       <div className="mb-4">
         <h2 className="text-lg font-semibold mb-2 text-gray-300">Copy Your Unique Link</h2>{' '}
@@ -152,7 +152,7 @@ const Dashboard = () => {
             type="text"
             value={profileUrl}
             disabled
-            className="w-full p-2 mr-2 rounded-md bg-transparent border border-white/15 bg-zinc-900 text-zinc-300 "
+            className="w-full p-2 mr-2 rounded-md max-sm:text-xs bg-transparent border border-white/15 bg-zinc-900 text-zinc-300 "
           />
             <Button 
               onClick={copyToClipboard} 

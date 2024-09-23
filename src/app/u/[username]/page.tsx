@@ -95,7 +95,7 @@ const Message = () => {
           message.
         </p>
       </div>
-      <div className="max-w-2xl mx-auto px-4">
+      <div className="max-w-2xl mx-auto my-2 px-4">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(handleSendMessage)}

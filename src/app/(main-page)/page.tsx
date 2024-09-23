@@ -99,7 +99,7 @@ export default function Home() {
             
           {/* </div> */}
           {/* <div className="py-20"> */}
-            <h1 className="text-9xl md:text-[148px] md:leading-none font-semibold tracking-tighter bg-white bg-[radial-gradient(100%_100%_at_top_left,white,white,#4ca1af)] text-transparent bg-clip-text text-center ">
+            <h1 className="text-8xl md:text-[148px] md:leading-none font-semibold tracking-tighter bg-white bg-[radial-gradient(100%_100%_at_top_left,white,white,#4ca1af)] text-transparent bg-clip-text text-center ">
             {/* <h1 className="text-7xl md:text-[148px] md:leading-none font-semibold tracking-tighter bg-white bg-[radial-gradient(100%_100%_at_top_left,white,white,#de4a7b)] text-transparent bg-clip-text text-center "> */}
             {/* <h1 className="text-7xl md:text-[148px] md:leading-none font-semibold tracking-tighter bg-white bg-[radial-gradient(100%_100%_at_top_left,white,white,rgb(74,32,138,.5))] text-transparent bg-clip-text text-center "> */}
               Quick Feeds
