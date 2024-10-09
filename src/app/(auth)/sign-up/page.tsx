@@ -93,7 +93,9 @@ const SignUpForm = () => {
       <div className="w-full max-w-md p-5 md:p-8 rounded-lg shadow-lg space-y-2 lg:space-y-4 border border-white/15 bg-zinc-950">
         <div className="text-center">
           <div className='flex justify-center items-center'>
-            <MessageSquareCode className='w-10 h-10'/>
+          <Link href={"/"}>
+              <MessageSquareCode className='w-10 h-10'/>
+            </Link>
           </div>
           <h1 className="text-4xl pt-0 lg:pt-4  font-extrabold tracking-tight lg:text-5xl mb-6 bg-clip-text text-transparent bg-[radial-gradient(100%_100%_at_top_left,white,white,#4ca1af)]">
             JOIN FEEDORA
